@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexa's Portfolyezzz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <header>
+    <nav class="menu">
+      <ul>
+         <li> <a href="haha2.html">HOME</a> </li>
+         <li><a href="skills.html">SKILLS</a></li>
+         <li> <a href="certifications.html">CERTIFICATIONS</a></li>
+          <li> <a href="projects.html">PROJECTS</a> </li>
+          <li> <a href="contacts.html">CONTACTS</a> </li>
+     </ul>
+     <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </nav>
+</header>
+<br>
+
+<section class="ALEXA">
+  <div class="background-image"></div>
+  <div class="profile-container">
+     <img src="SCC.jpg" alt="Profile Picture">  
+      <h1>Hi there!</h1>
+      <p>I'm Alexa A. Acerda, 16 years old from ICT 11-5, currently studying at St.Clare College.</p>
+</div>
+</section>
+
+<section class="get-to-know">
+    <h2>Get to Know Me (✿◡‿◡)</h2>
+    
+    <div class="card-container">
+        <div class="card">
+            <h3>Music</h3>
+            <p>I love R&B, I often listen to Ashanti, Destiny's Child, Brandy, Aaliyah, and Cassie.</p>
+                <p> I'm also A fan of some korean artist and groups, I love to listen to New Jeans, IU, Bolbbalgan4, Twice, and Blackpink. </p>
+                    <p>  I also listen to Filipino artist like Zild, December Avenue, Arthur Nery, Geiko, and I've been listening to Cup of Joe recently because a song from then reminded me of someone. EMEEEEEhawhghgsdhsh. Anyways, there's many artist that I love I can't include all of them here. </p>
+        </div>
+        <div class="card">
+            <h3>Movie</h3>
+            <p>I love watching anime, I love watching all of the animated movies from Studio Ghibli & Junji Itto's work. </p>
+            <p>I've watched many old k-drama's, The legend of the Blue Sea, Rooftop Prince, Princess Hours, And My love from the star.</p>
+            <p>I watch many teenager movies like, Wild child, Mean Girls, Legally Blonde and etc.</p>
+        </div>
+        <div class="card">
+            <h3>Hobbies</h3>
+            <p>I love playing games(I'm not good at it though). I'm also into reading, and I'm currently learning how to play ukulele.</p>
+            <p>I enjoy sleeping and eating</p>
+            <p>I'm not athletic person and has low stamina. I actually hate P.E. since I have trouble doing something physically.</p>
+        </div>
+        <div class="card">
+            <h3>Foods</h3>
+            <p>I love food that's cooked by my mom.</p>
+            <p>I hate ampalaya</p>
+            <p>I love fruits</p>
+            <p>I don't really like street foods, but my friends loves it so I'm good with it.</p>
+        </div>
+    </div>
+</section>
+<script src="script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach(card => {
+            card.addEventListener("mouseenter", () => {
+                cards.forEach(c => c.classList.remove("active"));
+                card.classList.add("active");
+            });
+
+            card.addEventListener("mouseleave", () => {
+                card.classList.remove("active");
+            });
+        });
+    });
+
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check if dark mode is already enabled (from localStorage)
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+      body.classList.add('dark-mode');
+    }
+
+    // Toggle dark mode on button click
+    themeToggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+
+      // Save the state of dark mode in localStorage
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+      } else {
+        localStorage.removeItem('dark-mode');
+      }
+    });
+  </script>
+</body>
+</html>
